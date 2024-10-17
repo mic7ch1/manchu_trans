@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manchu Word Lookup</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    
+        .container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin-top: 10vh; /* Move the content down by 10% of the viewport height */
+            width: 80%; /* Set a width to center and contain the input field */
+        }
+    
+        h1 {
+            margin-top: 0;
+        }
+    
+        .alphabet-list {
+            margin: 10px 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    
+        .alphabet-list li {
+            margin: 0 5px;
+            padding: 5px;
+            font-size: 18px;
+        }
+    
+        form {
+            margin-bottom: 20px;
+        }
+    
+        textarea {
+            width: 100%;
+            height: 100px; /* Adjust the height as needed */
+            padding: 10px; /* Padding for both sides */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            resize: vertical; /* Allow users to resize vertically */
+            box-sizing: border-box; /* Make padding and border part of the width */
+        }
+    
+        #output {
+            text-align: left;    /* Align the text to the left */
+            white-space: pre-line; /* Preserve line breaks */
+            margin-left: 40px;    /* Add 40px margin from the left side */
+            margin-right: 40px;   /* Add 40px margin from the right side */
+        }
+
+        #allMatches {
+            text-align: left;    /* Align the text to the left */
+            margin-left: 40px;    /* Same margins as the output */
+            margin-right: 40px;   /* Same margins as the output */
+            margin-top: 20px;     /* Add some space between the output and the matches */
+        }
+
+        .word {
+            margin: 5px;
+            padding: 5px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+    
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 220px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the text */
+            left: 50%;
+            margin-left: -110px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #allMatches {
+            text-align: left;     /* Align the text to the left */
+            margin-left: 40px;    /* Same margins as the output */
+            margin-right: 40px;   /* Same margins as the output */
+            margin-top: 20px;     /* Add some space between the output and the matches */
+            line-height: 1.5;     /* Control the spacing between lines (1.5 is default, you can increase or decrease it) */
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>Manchu Word Lookup</h1>
+
+        <!-- Alphabet List -->
+        <ul class="alphabet-list">
+            <li>A</li><li>B</li><li>C</li><li>D</li><li>E</li><li>F</li><li>G</li><li>H</li><li>I</li><li>J</li>
+            <li>K</li><li>L</li><li>M</li><li>N</li><li>O</li><li>P</li><li>Q</li><li>R</li><li>S</li><li>T</li>
+            <li>U</li><li>V</li><li>W</li><li>X</li><li>Y</li><li>Z</li><li>Ž</li><li>Š</li><li>Ū</li><li>-</li><li>'</li>
+        </ul>
+
+        <form id="manchuForm">
+            <label for="inputString">Enter Manchu Words:</label><br>
+            <!-- Changed to textarea -->
+            <textarea id="inputString" name="inputString" placeholder="Enter here."></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="output"></div>
+
+        <!-- All Matches Section -->
+        <h2>All Matches</h2>
+        <div id="allMatches"></div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

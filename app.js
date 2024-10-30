@@ -212,3 +212,11 @@ document.getElementById('manchuForm').addEventListener('submit', function(event)
         });
     });
 });
+
+// Add an event listener to the textarea to submit the form on Enter key press
+document.getElementById('inputString').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default behavior of adding a new line
+        document.getElementById('manchuForm').dispatchEvent(new Event('submit')); // Trigger form submission
+    }
+});

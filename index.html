@@ -143,15 +143,25 @@
             <button type="submit">Submit</button>
         </form>
 
-        <div id="output"></div>
-
-        <!-- All Matches Section -->
-        <h2>All Matches</h2>
-        <div id="allMatches"></div>
+        <div id="resultsContainer" style="display: flex; justify-content: space-between; width: 100%;">
+            <div id="resultsColumn1" style="width: 48%;">
+                <h2>Matches (English)</h2>
+                <div id="output"></div>
+                <div id="allMatches"></div>
+            </div>
+            <div id="resultsColumn2" style="width: 48%;">
+                <h2>Matches (Chinese)</h2>
+                <div id="outputPh2"></div>
+                <div id="allMatchesPh2"></div>
+            </div>
+        </div>
 
         <!-- Source Credit -->
         <footer style="margin-top: 20px; font-size: 14px; color: #555;">
-            Source: Norman, Jerry, Keith Dede, and David Prager Branner. <em>A Comprehensive Manchu-English Dictionary</em>. Cambridge, MA: Harvard University Asia Center, 2013.
+        
+            <strong>Sources:</strong><br>
+            Norman, Jerry, Keith Dede, and David Prager Branner. <em>A Comprehensive Manchu-English Dictionary</em>. Cambridge, MA: Harvard University Asia Center, 2013.<br>
+            胡增益. 新滿漢大辭典. 新疆人民出版社, 1994.<span id="sourcePh2"></span>
         </footer>
     </div>
 
